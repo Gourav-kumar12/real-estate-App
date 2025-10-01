@@ -43,7 +43,7 @@ class ICloudAccountViewModel: ObservableObject {
 struct ICloudAccount: View {
     @StateObject private var vm = ICloudAccountViewModel()
     
-    // ✅ Notification state
+    //  Notification state
     @State private var showNotification = false
     
     var body: some View {
@@ -71,7 +71,7 @@ struct ICloudAccount: View {
                 }
             }
             
-            // ✅ Notification Banner
+            //  Notification Banner
             if showNotification {
                 Text("✅ Apple Authentication Login Successful")
                     .font(.subheadline)
@@ -90,7 +90,7 @@ struct ICloudAccount: View {
         .animation(.spring(), value: showNotification)
     }
     
-    // MARK: - Trigger Notification
+    // : - Trigger Notification
     private func triggerNotification() {
         showNotification = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
